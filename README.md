@@ -11,5 +11,10 @@ cd 1dra
 bash gas.sh
 ```
 # note : saya tidak bertanggung jawab atas segala sesuatu yang terjadi terhadap anda, saya menyediakan ini hanya untuk pembelajaran saya saja !
+```
+Budayakan memBaca Dengan teliti
+
+Do with your own risk 
+```
 
 # tidak disarankan untuk mencobanya 🗿🖕
