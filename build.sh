@@ -18,20 +18,21 @@ BGCyan="\e[46m"
 BGWhite="\e[47m"
 
 RED='\033[0;31m'
-NC='\033[0m'
 GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
 BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
+
 tyblue='\e[1;36m'
 NC='\e[0m'
+
 b="\033[34;1m";m="\033[31;1m";h="\033[32;1m"
 p="\033[39;1m";c="\033[35;1m";u="\033[36;1m"
 k="\033[33;1m";n="\033[00m"
-YDX="https://raw.githubusercontent.com/YaddyKakkoii/stb/main/"
-IDX="https://raw.githubusercontent.com/njajaldoang/1dra/main/"
+
+
 function kakkoii(){
 clear
 figlet -f small -t "      Yaddy Kakkoii" | lolcat
@@ -49,6 +50,25 @@ echo "*                       1337                        *"
 echo "*****************************************************"
 echo ""
 }
+
+function bannerwrt(){
+        clear
+        echo -e "              Yaddy Kakkoii" | lolcat
+        echo -e "              TELEGRAM : t.me/Crystalllz | Crypter"
+        echo -e "              ⚡MAGELANG ⚡PHREAKER ⚡| versi beta"
+        echo ""
+        echo "*****************************************************"
+        echo "*            Not Open Source @Crystalllz            *"
+        echo "*****************************************************"
+        echo "*                 AUTO CREATE YAML                  *"
+        echo "*                      Author                       *"
+        echo "*                Mas Triadzz Ganteng                *"
+        echo "* Telegram: t.me/Crystalllz | Github: Yaddy Kakkoii *"
+        echo "*                       1337                        *"
+        echo "*****************************************************"
+        echo ""
+}
+
 ##########################################################
 ############ OPENWRT REQUIRED PACKAGE
 ##########################################################
@@ -203,7 +223,7 @@ instal_nodejs_termux(){
     npm install -g bash-obfuscate
     npm -v
     apt install binutils -y
-    apt install ncurses-utils
+    apt install ncurses-utils -y
     apt install yarn
     yarn install
     #npm start
@@ -219,9 +239,35 @@ instal_nodejs_vps(){
     npm -v
 }
 # ============================================================
+YDX="https://raw.githubusercontent.com/YaddyKakkoii/stb/main/"
+IDX="https://raw.githubusercontent.com/njajaldoang/1dra/main/"
+# ============================================================
+function makedirectory(){
+    mkdir -p $HOME/.var
+    mkdir -p $HOME/.var/local
+    mkdir -p $HOME/.var/local/sbin
+    mkdir -p $HOME/.var/local/backup
+}
+function checkdirectory(){
+if [ -d $HOME/.var ]; then rm -rf $HOME/.var; fi
+if [ ! -d $HOME/.var ]; then makedirectory; fi
+}
+# ============================================================
+if [ ! -f $HOME/.var/local/sbin/spiner ]; then
+    checkdirectory
+    wget -qO $HOME/.var/local/sbin/spiner "${YDX}spiner.sh"
+    chmod 777 $HOME/.var/local/sbin/spiner
+else
+    rm -rf $HOME/.var/local/sbin/spiner
+    wget -qO $HOME/.var/local/sbin/spiner "${YDX}spiner.sh"
+    chmod 777 $HOME/.var/local/sbin/spiner
+fi
+source $HOME/.var/local/sbin/spiner
+# ============================================================
 type -P curl 1>/dev/null
 [ "$?" -ne 0 ] && echo "Utillity 'curl' not found, installing" && apt install curl -y
 # ============================================================
+
 folder_bin=$(which curl | sed 's/curl//g')
 termux_bin="/data/data/com.termux/files/usr/bin/"
 vps_bin="/usr/bin/"
@@ -246,6 +292,21 @@ function dpkg_query(){
 }
 
 #   br=xzz gzz=1dra gzt=stb
+
+function fortermux(){
+    if [[ -e ${termux_bin}gzz ]]; then rm -f ${termux_bin}gzz; fi
+    if [[ ! -f ${termux_bin}gzz ]]; then
+        wget -qO ${termux_bin}xzz "${IDX}src/termxz" && wget -qO ${termux_bin}brot "${IDX}src/termbrot" && wget -qO ${termux_bin}gzz "${IDX}src/termgaza" && wget -qO ${termux_bin}gzt "${IDX}src/termgstb" && chmod +x ${termux_bin}gzt && chmod +x ${termux_bin}gzz && chmod +x ${termux_bin}brot && chmod +x ${termux_bin}xzz && gzz src/termcekip > $PREFIX/bin/cekip && gzz src/termgetip > $PREFIX/bin/getip && gzz src/termscan > $PREFIX/bin/scan && xzz $PREFIX/bin/cekip > /dev/null 2>&1 && xzz $PREFIX/bin/getip > /dev/null 2>&1 && xzz $PREFIX/bin/scan > /dev/null 2>&1 && rm $PREFIX/bin/cekip~ && rm $PREFIX/bin/getip~ && rm $PREFIX/bin/scan~ && chmod +x ${termux_bin}cekip && chmod +x ${termux_bin}getip && chmod +x ${termux_bin}scan
+    fi
+}
+
+function forvps(){
+    if [[ ! -f ${vps_bin}lzmv ]]; then wget -qO ${vps_bin}lzmv "${IDX}src/vxz"; fi && if [[ -e ${vps_bin}gzz ]]; then rm -f ${vps_bin}gzz; fi
+    if [[ ! -f ${vps_bin}gzz ]]; then
+        wget -qO ${vps_bin}gzz "${IDX}src/gaza" && wget -qO ${vps_bin}gzt "${IDX}src/gazat" && chmod +x ${vps_bin}gzt && chmod +x ${vps_bin}gzz && gzz src/termcekip > /usr/bin/cekip && gzz src/termgetip > /usr/bin/getip && gzz src/termscan > /usr/bin/scan && lzmv /usr/bin/cekip > /dev/null 2>&1 && lzmv /usr/bin/getip > /dev/null 2>&1 && lzmv /usr/bin/scan > /dev/null 2>&1 && rm /usr/bin/cekip~ && rm /usr/bin/getip~ && rm /usr/bin/scan~ && chmod +x ${vps_bin}cekip && chmod +x ${vps_bin}getip && chmod +x ${vps_bin}scan
+    fi
+}
+
 if [[ "$folder_bin" = "$termux_bin" ]]; then
     kakkoii
     echo "hai user termux"
@@ -255,27 +316,11 @@ if [[ "$folder_bin" = "$termux_bin" ]]; then
     dpkg_query
     download_packages_termux
     echo -e "\n\n⌛please wait until finish, dont interupt process..."
-    if [[ -e ${termux_bin}gzz ]]; then rm -f ${termux_bin}gzz; fi
-    if [[ ! -f ${termux_bin}gzz ]]; then
-        wget -qO ${termux_bin}xzz "${IDX}src/termxz" && wget -qO ${termux_bin}brot "${IDX}src/termbrot" && wget -qO ${termux_bin}gzz "${IDX}src/termgaza" && wget -qO ${termux_bin}gzt "${IDX}src/termgstb" && chmod +x ${termux_bin}gzt && chmod +x ${termux_bin}gzz && chmod +x ${termux_bin}brot && chmod +x ${termux_bin}xzz && gzz src/termcekip > $PREFIX/bin/cekip && gzz src/termgetip > $PREFIX/bin/getip && gzz src/termscan > $PREFIX/bin/scan && xzz $PREFIX/bin/cekip > /dev/null 2>&1 && xzz $PREFIX/bin/getip > /dev/null 2>&1 && xzz $PREFIX/bin/scan > /dev/null 2>&1 && rm $PREFIX/bin/cekip~ && rm $PREFIX/bin/getip~ && rm $PREFIX/bin/scan~ && chmod +x ${termux_bin}cekip && chmod +x ${termux_bin}getip && chmod +x ${termux_bin}scan
-    fi
+    fun_bar 'fortermux'
+    echo -e "[ ${GREEN}INFO${NC} ] ✔ Success, install dependencies 🔥🔥🔥"
 else
     if [[ -e /etc/openclash ]]; then
-        clear
-        echo -e "              Yaddy Kakkoii" | lolcat
-        echo -e "              TELEGRAM : t.me/Crystalllz | Crypter"
-        echo -e "              ⚡MAGELANG ⚡PHREAKER ⚡| versi beta"
-        echo ""
-        echo "*****************************************************"
-        echo "*            Not Open Source @Crystalllz            *"
-        echo "*****************************************************"
-        echo "*                 AUTO CREATE YAML                  *"
-        echo "*                      Author                       *"
-        echo "*                Mas Triadzz Ganteng                *"
-        echo "* Telegram: t.me/Crystalllz | Github: Yaddy Kakkoii *"
-        echo "*                       1337                        *"
-        echo "*****************************************************"
-        echo ""
+        bannerwrt
         echo "hai user openwrt"
         download_packages_openwrt
         echo -e "\n\n⌛please wait until finish, dont interupt process..."
@@ -283,6 +328,7 @@ else
         if [[ ! -f ${vps_bin}gzz ]]; then
             wget -qO ${vps_bin}gzz "${IDX}src/gazawrti" && wget -qO ${vps_bin}gzt "${IDX}src/gazawrty" && chmod +x ${vps_bin}gzt && chmod +x ${vps_bin}gzz && gzz src/cekipwrt > /usr/bin/cekip && gzz src/getipwrt > /usr/bin/getip && gzz src/scanwrt > /usr/bin/scan && xzwrt /usr/bin/cekip > /dev/null 2>&1 && xzwrt /usr/bin/getip > /dev/null 2>&1 && xzwrt /usr/bin/scan > /dev/null 2>&1 && rm /usr/bin/cekip~ && rm /usr/bin/getip~ && rm /usr/bin/scan~ && chmod +x ${vps_bin}cekip && chmod +x ${vps_bin}getip && chmod +x ${vps_bin}scan
         fi
+        echo -e "[ ${GREEN}INFO${NC} ] ✔ Success, install dependencies 🔥🔥🔥"
     else
         kakkoii
         echo "hai user vps"
@@ -292,9 +338,7 @@ else
         dpkg_query
         download_packages_vps
         echo -e "\n\n⌛please wait until finish, dont interupt process..."
-        if [[ ! -f ${vps_bin}lzmv ]]; then wget -qO ${vps_bin}lzmv "${IDX}src/vxz"; fi && if [[ -e ${vps_bin}gzz ]]; then rm -f ${vps_bin}gzz; fi
-        if [[ ! -f ${vps_bin}gzz ]]; then
-            wget -qO ${vps_bin}gzz "${IDX}src/gaza" && wget -qO ${vps_bin}gzt "${IDX}src/gazat" && chmod +x ${vps_bin}gzt && chmod +x ${vps_bin}gzz && gzz src/termcekip > /usr/bin/cekip && gzz src/termgetip > /usr/bin/getip && gzz src/termscan > /usr/bin/scan && lzmv /usr/bin/cekip > /dev/null 2>&1 && lzmv /usr/bin/getip > /dev/null 2>&1 && lzmv /usr/bin/scan > /dev/null 2>&1 && rm /usr/bin/cekip~ && rm /usr/bin/getip~ && rm /usr/bin/scan~ && chmod +x ${vps_bin}cekip && chmod +x ${vps_bin}getip && chmod +x ${vps_bin}scan
-        fi
+        fun_bar 'forvps'
+        echo -e "[ ${GREEN}INFO${NC} ] ✔ Success, install dependencies 🔥🔥🔥"
     fi
 fi
