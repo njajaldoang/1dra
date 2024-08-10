@@ -7,3 +7,5 @@ cd 1dra
 bash gas.sh
 ```
 # note : saya tidak bertanggung jawab atas segala sesuatu yang terjadi terhadap anda, saya menyediakan ini hanya untuk pembelajaran saya saja !
+
+# tidak disarankan untuk mencobanya 🗿🖕
